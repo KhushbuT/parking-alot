@@ -7,6 +7,9 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.List;
 
+import com.gojek.constant.Constants;
+import com.gojek.opreatinginterface.OperateParkingLot;
+
 public class ReadCommands {
 
 private String fileName;
@@ -28,8 +31,16 @@ private String fileName;
 	}
 
 
-	private void executeCommand(String line) {
-		// TODO Auto-generated method stub
+	private void executeCommand(String command) {
+		OperateParkingLot operate=new OperateParkingLot();
+		if (command.contains(Constants.COMMAND_1)) {
+			String[] inputs=command.split(" ");
+			operate.createParkingLot(Integer.parseInt(inputs[Constants.ONE]));
+		}
+		
+		
 		
 	}
+		
+	
 }
