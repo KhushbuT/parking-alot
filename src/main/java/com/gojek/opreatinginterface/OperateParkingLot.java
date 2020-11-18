@@ -1,6 +1,10 @@
 package com.gojek.opreatinginterface;
 
 import java.util.ArrayList;
+import java.util.Collections;
+
+import com.gojek.constant.Constants;
+import com.gojek.detailsofcar.MaintainDetails;
 
 public class OperateParkingLot implements OperateInterface{
 
@@ -25,7 +29,27 @@ public class OperateParkingLot implements OperateInterface{
 
 	@Override
 	public void parkCar(String carNumber) {
-		// TODO Auto-generated method stub
+		MaintainDetails.mapCarWithSlot.size();
+		if (this.size == 0) {
+            System.out.println("Sorry, parking lot is not created");
+            System.out.println();
+        } else if (MaintainDetails.mapCarWithSlot.size() == this.size) {
+            System.out.println("Sorry, parking lot is full");
+            System.out.println();
+        }else {
+        	Collections.sort(availableSlotList);
+            String slot = availableSlotList.get(0).toString();
+            new MaintainDetails().setValue(carNumber, Constants.PARK);
+            Car car = new Car(carNumber, slot);
+            MaintainDetails.mapCarWithSlot.put(carNumber, slot);
+            //this.map2.put(slot, slot);
+    		System.out.println("Allocated slot number: " + slot);
+    		availableSlotList.remove(0);
+    		
+    		
+        }
+		
+		
 		
 	}
 

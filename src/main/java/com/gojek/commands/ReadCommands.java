@@ -38,7 +38,10 @@ private String fileName;
 			operate.createParkingLot(Integer.parseInt(inputs[Constants.ONE]));
 		}
 		
-		
+		if (command.startsWith(Constants.COMMAND_2)) {
+			String[] inputs=command.split(" ");
+			operate.parkCar(inputs[Constants.ONE]);
+		}
 		
 	}
 		
