@@ -8,10 +8,10 @@ import com.gojek.detailsofcar.MaintainDetails;
 
 public class OperateParkingLot implements OperateInterface{
 
-	private static Integer size=0;
+	public static int size=0;
 
 	// Available slots list
-   static ArrayList<Integer> availableSlotList;
+   public static ArrayList<Integer> availableSlotList;
     
 	
 	@Override
