@@ -48,6 +48,11 @@ private String fileName;
 			operate.leaveCar(inputs[1], Integer.parseInt(inputs[Constants.TWO]));
 		}
 		
+		if (command.startsWith(Constants.COMMAND_4)) {
+			operate.status();
+		}
+		
+		
 	}
 		
 	

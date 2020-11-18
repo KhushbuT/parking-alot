@@ -84,7 +84,7 @@ public class OperateParkingLot implements OperateInterface{
 
 	@Override
 	public void status() {
-		// TODO Auto-generated method stub
+		new MaintainDetails().show();
 		
 	}
 

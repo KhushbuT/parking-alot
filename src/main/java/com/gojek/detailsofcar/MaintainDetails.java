@@ -23,5 +23,13 @@ public class MaintainDetails {
 	public static Map<String,String> getCarwithSlot(){
 		return mapCarWithSlot;
 	}
+	
+	public void show() {
+		for(String keys:MaintainDetails.parkCarMap.keySet()) {
+			System.out.println("\n "+keys+" ");
+		}
+		
+		}
+
 
 }
