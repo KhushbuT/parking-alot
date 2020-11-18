@@ -15,5 +15,13 @@ public class MaintainDetails {
 	public void setValue(String carName,String status) {
 		MaintainDetails.parkCarMap.put(carName, status);
 	}
+	
+	public static Map<String, String> getParkCarMap() {
+		return parkCarMap;
+	}
+
+	public static Map<String,String> getCarwithSlot(){
+		return mapCarWithSlot;
+	}
 
 }

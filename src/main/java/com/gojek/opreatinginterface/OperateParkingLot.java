@@ -55,7 +55,30 @@ public class OperateParkingLot implements OperateInterface{
 
 	@Override
 	public void leaveCar(String carNumber, int hours) {
-		// TODO Auto-generated method stub
+		String status = MaintainDetails.parkCarMap.get(carNumber);
+		String slot=MaintainDetails.mapCarWithSlot.get(carNumber);
+		Integer totalCharges=0;
+		
+		 if(status!=null && slot!=null &&!status.equals(Constants.leave)) {
+		new MaintainDetails().setValue(carNumber, Constants.leave);
+		
+		if(hours<=2) {
+			totalCharges=10;
+		}else {
+			int hr=hours-2;
+			totalCharges=10;
+			while(hr!=0) {
+				totalCharges+=10;
+				hr--;
+			}
+		}
+		System.out.println("\nRegistration number "+carNumber + " with Slot Number " + slot +" is free with charge " +totalCharges);
+		MaintainDetails.parkCarMap.remove(carNumber);
+		MaintainDetails.mapCarWithSlot.remove(carNumber);
+		 this.availableSlotList.add(Integer.parseInt(slot));
+		}else {
+			System.out.println("\nCar number " + carNumber+" not found");
+		}
 		
 	}
 

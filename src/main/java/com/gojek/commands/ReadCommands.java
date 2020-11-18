@@ -43,6 +43,11 @@ private String fileName;
 			operate.parkCar(inputs[Constants.ONE]);
 		}
 		
+		if (command.startsWith(Constants.COMMAND_3)) {
+			String[] inputs=command.split(" ");
+			operate.leaveCar(inputs[1], Integer.parseInt(inputs[Constants.TWO]));
+		}
+		
 	}
 		
 	
