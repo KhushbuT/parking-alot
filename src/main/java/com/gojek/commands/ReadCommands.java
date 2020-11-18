@@ -19,11 +19,19 @@ private String fileName;
 	}
 
 	
-	public void readFile() throws IOException {
+	public void readFile() throws FileNotFoundException  {
 		File file = new File(fileName);
 		if (file.exists()) {
-			List<String> readAllLines = Files.readAllLines(file.toPath(),StandardCharsets.UTF_8);
-			readAllLines.forEach(line->executeCommand(line));
+			List<String> readAllLines;
+			try {
+				readAllLines = Files.readAllLines(file.toPath(),StandardCharsets.UTF_8);
+				readAllLines.forEach(line->executeCommand(line));
+			} catch (IOException e) {
+				System.out.println(" Please enter file name ");
+				
+			}
+			
+			
 		} else {
 			throw new FileNotFoundException("Please check your file name");
 		}
