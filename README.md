@@ -1,2 +1,2 @@
-# parking-alot
-parking-alot-problem
+# parking-lot
+parking-lot-problem
